@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Tag;
 use App\Models\Translation;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Tests\TestCase;
@@ -11,10 +12,14 @@ use Tests\TestCase;
 class PerformanceTest extends TestCase
 {
     use RefreshDatabase;
+    protected User $user;
 
     protected function setUp(): void
     {
         parent::setUp();
+
+        $this->user = User::factory()->create();
+        $this->actingAs($this->user, 'sanctum');
 
         $this->seedPerformanceData();
     }
