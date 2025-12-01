@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
@@ -75,7 +76,7 @@ class TranslationController extends Controller
                 : null,
         ];
 
-        $filters = array_filter($filters, fn($value) => !is_null($value));
+        $filters = array_filter($filters, fn ($value) => ! is_null($value));
 
         $translations = $this->translationService->searchTranslations($filters);
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace Tests\Unit;
 
 use App\Models\Translation;
@@ -118,6 +119,6 @@ class TranslationServiceTest extends TestCase
         $results = $this->service->searchTranslations(['locale' => 'en']);
 
         $this->assertCount(5, $results);
-        $this->assertTrue($results->every(fn($t) => $t->locale === 'en'));
+        $this->assertTrue($results->every(fn ($t) => $t->locale === 'en'));
     }
 }

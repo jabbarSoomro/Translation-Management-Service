@@ -1,8 +1,8 @@
 <?php
+
 namespace App\Console\Commands;
 
 use App\Models\Tag;
-use App\Models\Translation;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 
@@ -92,7 +92,7 @@ class SeedTranslations extends Command
                 $numTags = rand(1, 3);
                 $selectedTags = array_rand(array_flip($tagIds), $numTags);
 
-                if (!is_array($selectedTags)) {
+                if (! is_array($selectedTags)) {
                     $selectedTags = [$selectedTags];
                 }
 
@@ -106,7 +106,7 @@ class SeedTranslations extends Command
                 }
             }
 
-            if (!empty($pivotData)) {
+            if (! empty($pivotData)) {
                 DB::table('translation_tag')->insert($pivotData);
             }
 
