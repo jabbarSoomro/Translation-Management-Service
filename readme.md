@@ -15,8 +15,8 @@ A high-performance API-driven translation management service built with Laravel,
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd translation-service
+git clone https://github.com/jabbarSoomro/Translation-Management-Service
+cd Translation-Management-Service
 ```
 
 2. Install dependencies:
